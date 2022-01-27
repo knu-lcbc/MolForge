@@ -1,0 +1,15 @@
+# ignore compiled file
+__pycache__/
+*.pyc
+
+# ignore egg-info
+*.egg-info
+
+# png file
+*.png
+
+# Big files
+saved_models/
+
+# notebook checkpoints
+*.ipynb_checkpoints/
