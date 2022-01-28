@@ -4,6 +4,7 @@ from .fingerprints import *
 
 import argparse
 import heapq
+import os
 import re
 import warnings
 
@@ -89,8 +90,8 @@ def FpSimilarity(smiles1, smiles2,
             return 0
     except:
         return 0
-    
-    
+
+
 def fpBitVec(mol, radius=1, nBits=2048):
     return AllChem.GetMorganFingerprintAsBitVect(mol,radius,nBits)
 
@@ -319,13 +320,13 @@ def getSmarts(mol,atomID,radius):
 def getIdxSmarts(mol):
     info = {}
     fp = GetMorganFingerprint(mol, radius=1, bitInfo=info )
-    
+
     info_temp = {}
     for bitId,atoms in info.items():
         exampleAtom,exampleRadius = atoms[0]
         description = getSmarts(mol,exampleAtom,exampleRadius)
         info_temp[bitId] = (exampleRadius,  description[-2], description[-1])
-        
+
     return info_temp
 
 
@@ -338,10 +339,11 @@ def find_free_port():
         s.bind(('', 0))
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         return str(s.getsockname()[1])
-    
-    
+
+
 def download_checkpoints():
     import gdown
+    import tarfile
     from .evaluate import test_evaluate
     from .parameters import root_dir
 
@@ -352,12 +354,16 @@ def download_checkpoints():
     file_id = '1qD8JicIwjyxKKLYahKtbBzKhnUq0JBKx'
     output = root_dir.joinpath('saved_models.tar.gz')
 
-
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
 
     gdown.download(url, output, quiet=False)
     print('The trained models are successfully downloaded.\n')
+
+    print('*** Extracting archive file ***\n')
+    cmd = 'tar -xvzf saved_models.tar.gz'
+    os.system(cmd)
+
     print('--'*5, 'Testing checkpoints', '--'*5)
     print()
     test_evaluate(args)
