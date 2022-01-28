@@ -5,7 +5,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setup(name='FingerprintDecoder',
-      version='0.1',
+      version='1.0.1',
       long_description=long_description,
       long_description_content_type='text/markdown',
       author='Islambek Ashyrmamatov',
@@ -20,14 +20,16 @@ setup(name='FingerprintDecoder',
           'pandas>=1.3.1',
           'numpy>=1.22.1',
           'matplotlib>=3.4.3',
-          'seaborn==0.11.1'
+          'seaborn==0.11.1',
+          'gdown'
       ],
       entry_points = '''
             [console_scripts]
             train = FingerprintDecoder.train:main
             evaluate = FingerprintDecoder.evaluate:main
             predict = FingerprintDecoder.predict:main
+            download_checkpoints = FingerprintDecoder.utils:download_checkpoints
       ''',
-      zip_safe=False
+      zip_safe=True
 )
 

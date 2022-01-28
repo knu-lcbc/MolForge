@@ -2,6 +2,7 @@ from .parameters import *
 from .transformer import *
 from .fingerprints import *
 
+import argparse
 import heapq
 import re
 import warnings
@@ -337,3 +338,27 @@ def find_free_port():
         s.bind(('', 0))
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         return str(s.getsockname()[1])
+    
+    
+def download_checkpoints():
+    import gdown
+    from .evaluate import test_evaluate
+    from .parameters import root_dir
+
+    # https://stackoverflow.com/questions/56857900/download-shared-google-drive-folder-with-python
+    # https://stackoverflow.com/questions/25010369/wget-curl-large-file-from-google-drive/39225039#39225039
+    # https://drive.google.com/file/d/1qD8JicIwjyxKKLYahKtbBzKhnUq0JBKx/view?usp=sharing
+    url =  'https://drive.google.com/uc?id=1qD8JicIwjyxKKLYahKtbBzKhnUq0JBKx'
+    file_id = '1qD8JicIwjyxKKLYahKtbBzKhnUq0JBKx'
+    output = root_dir.joinpath('saved_models.tar.gz')
+
+
+    parser = argparse.ArgumentParser()
+    args = parser.parse_args()
+
+    gdown.download(url, output, quiet=False)
+    print('The trained models are successfully downloaded.\n')
+    print('--'*5, 'Testing checkpoints', '--'*5)
+    print()
+    test_evaluate(args)
+
