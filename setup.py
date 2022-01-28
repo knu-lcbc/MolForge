@@ -1,14 +1,19 @@
 from setuptools import setup
+from pathlib import Path
+
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 setup(name='FingerprintDecoder',
       version='0.1',
-      desctiption='The package setup',
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       author='Islambek Ashyrmamatov',
       author_email='ashyrmamatov01@gmail.com',
       license='Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)',
-      packages=['src'],
+      packages=['FingerprintDecoder'],
       install_requires=[
-          'rdkit-pypi==2021.03.4',
+          'rdkit-pypi==2021.3.4',
           'torch==1.9.0',
           'selfies==1.0.4',
           'sentencepiece==0.1.95',
@@ -19,9 +24,9 @@ setup(name='FingerprintDecoder',
       ],
       entry_points = '''
             [console_scripts]
-            train = src.train:main
-            evaluate = src.evaluate:main
-            predict = src.predict:main
+            train = FingerprintDecoder.train:main
+            evaluate = FingerprintDecoder.evaluate:main
+            predict = FingerprintDecoder.predict:main
       ''',
       zip_safe=False
 )
