@@ -4,15 +4,15 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
-setup(name='FingerprintDecoder',
+setup(name='MolForge',
       version='1.0.1',
       long_description=long_description,
       long_description_content_type='text/markdown',
       author='Umit V. Ucak, Islambek Ashyrmamatov, Juyong Lee',
       author_email='{umiti, ashyrmamatov, juyong.lee}@kangwon.ac.kr',
       license='Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)',
-      url='https://github.com/knu-lcbc/FingerprintDecoder',
-      packages=['FingerprintDecoder'],
+      url='https://github.com/knu-lcbc/MolForge',
+      packages=['MolForge'],
       install_requires=[
           'rdkit-pypi==2021.3.4',
           'torch==1.9.0',
@@ -26,10 +26,10 @@ setup(name='FingerprintDecoder',
       ],
       entry_points = '''
             [console_scripts]
-            train = FingerprintDecoder.train:main
-            evaluate = FingerprintDecoder.evaluate:main
-            predict = FingerprintDecoder.predict:main
-            download_checkpoints = FingerprintDecoder.utils:download_checkpoints
+            train = MolForge.train:main
+            evaluate = MolForge.evaluate:main
+            predict = MolForge.predict:main
+            download_checkpoints = MolForge.utils:download_checkpoints
       ''',
       zip_safe=True
 )
