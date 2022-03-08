@@ -1,6 +1,6 @@
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-## Decoding fingerprints to lossless representations.
+## Reconstruction of lossless molecular representations.
 1.  Our aim was to exploit the idea that structural fingerprints can be used as alternatives to unique molecular representations.
 
 2.  Restoring the connectivity information which is lost during the fingerprint conversion.
