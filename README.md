@@ -32,7 +32,7 @@ Run below commands to conduct an inference with the trained model.
    ```
    - `--fp`: The name of fingerprint.
    - `--model_type`: Molecular representation e.g. 'smiles' or 'selfies'
-   - `--input`: An input for single prediction
+   - `--input`: An input for prediction
    - `--checkpoint`: Checkpoint file for the given model. If `None`, it uses the downloaded checkpoints.  
    - `--decode`: Decoding algorithm (either `'greedy'` or `'beam'`), (by default: `greedy`)
  
