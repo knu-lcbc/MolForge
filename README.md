@@ -96,6 +96,7 @@ Figure 3: Each cell shows the Tanimoto exactness (%) of selected fingerprint tra
 | FCFP4  |    71.5 |     67.5 |   73.7 |     73.8 |     65.5 | 67.3 |     67.3 |    69.2 |    68.5 |    66.3 |    87.6 |    86.7 |  68.5 |     74.4 |     68.1 |
 | AEs    |    86.7 |     76.2 |   83.5 |     83.6 |     74   | 76.3 |     76.3 |    85.3 |    83.5 |    74.7 |    85.2 |    76.8 |  83.5 |     97   |     76.5 |
 
+For more results see the `Pairwise_Analysis.ipynb` notebook.
 <hr style="background: transparent; border: 0.5px dashed;"/>
 
 ## Cite
