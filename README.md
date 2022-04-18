@@ -28,7 +28,7 @@ First, [checkpoints files](https://drive.google.com/uc?id=1qD8JicIwjyxKKLYahKtbB
 Run below commands to conduct an inference with the trained model.
 
    ```shell
-   predict --fp --model_type
+   predict --fp --model_type --input
    ```
    - `--fp`: The name of fingerprint.
    - `--model_type`: Molecular representation e.g. 'smiles' or 'selfies'
@@ -41,7 +41,7 @@ Example prediction;
 ```shell
 predict --fp='ECFP4' --model_type='smiles' --input='1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
 ```
-and its sample output
+and its sample output;
 
    ```shell
 Here we go..
@@ -55,10 +55,10 @@ Here we go..
  trg_vocab_size : 109
     src_seq_len : 104
     trg_seq_len : 130
-       root_dir : /home/islambek/tmp/MolForge
-     fp_datadir : /home/islambek/tmp/MolForge/data/fingerprints/ECFP4
-  src_sp_prefix : /home/islambek/tmp/MolForge/data/sp/ECFP4_vocab_sp
-  trg_sp_prefix : /home/islambek/tmp/MolForge/data/sp/smiles_vocab_sp
+       root_dir : /home/tmp/MolForge
+     fp_datadir : /home/tmp/MolForge/data/fingerprints/ECFP4
+  src_sp_prefix : /home/tmp/MolForge/data/sp/ECFP4_vocab_sp
+  trg_sp_prefix : /home/tmp/MolForge/data/sp/smiles_vocab_sp
            rank : cuda
          device : cuda
 
