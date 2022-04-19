@@ -101,18 +101,7 @@ For more results see the `Pairwise_Analysis.ipynb` notebook.
 
 ## Cite
 ```
-@article{Ucak2022,
-  doi = {10.1038/s41467-022-28857-w},
-  url = {https://doi.org/10.1038/s41467-022-28857-w},
-  year = {2022},
-  month = mar,
-  publisher = {Springer Science and Business Media {LLC}},
-  volume = {13},
-  number = {1},
-  author = {Umit V. Ucak and Islambek Ashyrmamatov and Junsu Ko and Juyong Lee},
-  title = {Retrosynthetic reaction pathway prediction through neural machine translation of atomic environments},
-  journal = {Nature Communications}
-}
+
 ```
 
 ### License
