@@ -1,4 +1,4 @@
-name: FingerprintDecoder
+name: MolForge_env
 channels:
   - defaults
 dependencies:
@@ -37,4 +37,3 @@ dependencies:
     - six==1.16.0
     - soupsieve==2.3.1
     - urllib3==1.26.8
-prefix: /home/islambek/anaconda3/envs/FingerprintDecoder

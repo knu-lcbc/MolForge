@@ -78,7 +78,7 @@ Inference finished! || Total inference time: 0mins 0secs
 <hr style="background: transparent; border: 0.5px dashed;"/>
 
 ## Result
-Figure 3: Each cell shows the Tanimoto exactness (%) of selected fingerprint transformation to SMILES (row-wise) computed at the respective fingerprint encodings(columns-wise). The consistency in color code reflects the robustness, while the jumps represent the effect of selection bias. ECFP2* and ECFP4* represent explicit bit versions.
+Each cell shows the Tanimoto exactness (%) of selected fingerprint transformation to SMILES (row-wise) computed at the respective fingerprint encodings(columns-wise). The consistency in color code reflects the robustness, while the jumps represent the effect of selection bias. ECFP2* and ECFP4* represent explicit bit versions.
 
 |        |   MACCS |   Avalon |   RDK4 |   RDK4_L |   HashAP |   TT |   HashTT |   ECFP0 |   ECFP2 |   ECFP4 |   FCFP2 |   FCFP4 |   AEs |   ECFP2* |   ECFP4* |
 |:-------|--------:|---------:|-------:|-----------:|---------:|-----:|---------:|--------:|--------:|--------:|--------:|--------:|------:|---------:|---------:|
