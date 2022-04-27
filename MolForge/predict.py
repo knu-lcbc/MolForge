@@ -22,8 +22,8 @@ from .decoder import greedy_search, beam_search
 # Use this python module for inference mode
 
 
-def setup(model, checkpoint_path, args):
-    print("Loading checkpoint...", args.fp, args.model_type)
+def setup(model, checkpoint_path, args, print_=True):
+    if print_: print("Loading checkpoint...", args.fp, args.model_type)
     checkpoint = torch.load(checkpoint_path, map_location=torch.device(args.rank))
     updated_checkpoint= {}
     for key, val in checkpoint['model_state_dict'].items():

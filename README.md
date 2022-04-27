@@ -18,6 +18,7 @@ The source code is tested on Linux operating systems. After cloning the reposito
 
    ```shell
    conda env create --name MolForge_env --file=environment.yml
+   conda activate MolForge_env
    pip install .
    ```
    

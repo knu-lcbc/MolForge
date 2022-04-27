@@ -33,7 +33,7 @@ from torch.utils.data.distributed import DistributedSampler
 # -------------------
 # 1. Models
 
-def build_model(args):
+def build_model(args, print_=True):
     #print("Loading vocabs...")
     src_i2w = {}
     trg_i2w = {}
@@ -50,7 +50,7 @@ def build_model(args):
         word = line.strip().split('\t')[0]
         trg_i2w[i] = word
 
-    print(f"The size of src vocab is {len(src_i2w)} and that of trg vocab is {len(trg_i2w)}.")
+    if print_: print(f"The size of src vocab is {len(src_i2w)} and that of trg vocab is {len(trg_i2w)}.")
     #print()
     model = Transformer(src_vocab_size=len(src_i2w), trg_vocab_size=len(trg_i2w), args=args)
     #model = Transformer(src_vocab_size=len(src_i2w), trg_vocab_size=len(trg_i2w)).to(device)

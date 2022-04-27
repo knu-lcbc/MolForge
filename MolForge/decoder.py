@@ -51,8 +51,8 @@ def greedy_search(model, e_output, e_mask, trg_sp, device, return_attn=False):
 
 def beam_search(model, e_output, e_mask, trg_sp, device, return_candidates=False, return_attn=False):
     cur_queue = PriorityQueue()
-    for k in range(beam_size):
-        cur_queue.put(BeamNode(sos_id, -0.0, [sos_id]))
+    #for k in range(beam_size):
+    cur_queue.put(BeamNode(sos_id, -0.0, [sos_id]))
 
     finished_count = 0
 
@@ -60,6 +60,11 @@ def beam_search(model, e_output, e_mask, trg_sp, device, return_candidates=False
     for pos in range(trg_seq_len):
         new_queue = PriorityQueue()
         for k in range(beam_size):
+            if pos ==0 and (k)>0:
+                continue
+            else:
+                node = cur_queue.get()
+
             node = cur_queue.get()
             if node.is_finished:
                 new_queue.put(node)
@@ -99,7 +104,7 @@ def beam_search(model, e_output, e_mask, trg_sp, device, return_candidates=False
 
         if finished_count == beam_size:
             break
-            
+
     if not return_candidates:
         decoded_output = cur_queue.get().decoded
 
@@ -107,12 +112,12 @@ def beam_search(model, e_output, e_mask, trg_sp, device, return_candidates=False
             decoded_output = decoded_output[1:-1]
         else:
             decoded_output = decoded_output[1:]
-        
+
         if return_attn:
             return trg_sp.decode_ids(decoded_output), attn
         else:
             return trg_sp.decode_ids(decoded_output)
-        
+
     else:
         all_candidates = list()
         scores  = [ ]
@@ -131,7 +136,7 @@ def beam_search(model, e_output, e_mask, trg_sp, device, return_candidates=False
         else:
             return all_candidates, scores
 
-    
+
 ################
 # For beam search method
 
@@ -163,7 +168,7 @@ class BeamNode():
     def print_spec(self):
         print(f"ID: {self} || cur_idx: {self.cur_idx} || prob: {self.prob} || decoded: {self.decoded}")
 
-        
+
 class PriorityQueue():
     def __init__(self):
         self.queue = []

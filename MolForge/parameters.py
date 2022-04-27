@@ -100,6 +100,6 @@ train_step = 500000
 beam_size = 10
 learning_rate = 0.001
 
-ckpt_dir = 'saved_models'
+ckpt_dir = root_dir.joinpath('saved_models')
 if not os.path.exists(ckpt_dir):
     os.mkdir(ckpt_dir)
