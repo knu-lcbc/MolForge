@@ -5,18 +5,23 @@ from .utils import *
 import torch
 
 
-def model_call(input, fp='ECFP4', model_type='smiles', checkpoint=None, decode='greedy'):
+def model_call(input, fp='Extended-Connectivity Fingerprint(ECFP)', model_type='smiles', checkpoint=None, decode='greedy'):
 
     class Args:
-        pass
+        options = {'Extended-Connectivity Fingerprint(ECFP)': 'ECFP4',
+                    'Atom environments': 'AEs',
+                    'Topological torsion-sparse': 'TT',
+                    'Topological torsion-hasehd': 'HashTT',
+                    'Atom pair-hashed': 'HashAP'
+                    }
 
     args = Args
-    args.fp = fp
+    assert fp in args.options, f"Choose one of the fingerprints: \n{args.options}"
+    args.fp = args.options[fp]
     args.model_type = model_type
     args.checkpoint = checkpoint
     args.decode = decode
 
-    assert args.fp in fp_names, f"Choose one the fingerprints: \n{fp_names}"
     assert args.model_type in ['smiles', 'selfies'], f"Enter either 'smiles' or 'selfies'"
 
     if args.checkpoint:
@@ -65,9 +70,13 @@ def model_call(input, fp='ECFP4', model_type='smiles', checkpoint=None, decode='
     if decode == 'greedy':
         #print("Greedy decoding selected.")
         result = greedy_search(model, e_output, e_mask, trg_sp, args.device, False)
+        result = result.replace(' ', '')
     elif decode == 'beam':
         #print("Beam search selected.")
         result = beam_search(model, e_output, e_mask, trg_sp, args.device, False)
+        result = result.replace(' ', '')
+
+
     #print()
 
     #end_time = datetime.datetime.now()
@@ -80,5 +89,6 @@ def model_call(input, fp='ECFP4', model_type='smiles', checkpoint=None, decode='
     #print(f"Input: {input}")
     #print(f"Result: {result}")
     #print(f"Inference finished! || Total inference time: {minutes}mins {seconds}secs")
+    # output = reult sf.decoder(result) if model_type=='selfies' else result
 
-    return result
+    return reult
