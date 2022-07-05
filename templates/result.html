@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+    ></script>
+    <style>
+        .centered {
+            position: relative;
+            text-align: center;
+            display: grid;
+            place-items: center;
+            color: white;
+        }
+
+        .header {
+            color: black;
+        }
+
+        p {
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            margin: 0 0 24px;
+            text-justify: inter-word;
+        }
+
+        h1 {
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        #demo {
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 22px;
+            line-height: 24px;
+            margin: 0 0 24px;
+            text-justify: inter-word;
+        }
+
+        .form-div {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/home">Home</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+            <a class="nav-item nav-link" href="/predict">Predict</a>
+            <a class="nav-item nav-link" href="/reference">Reference</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Reference</h2>
+    </div>
+    <div class="row" style=" background-color: rgba(0,0,0,0.05); padding: 42px;">
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">{{variable}}}</h4>
+
+        </div>
+    </div>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2022 MolForge</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+</html>
