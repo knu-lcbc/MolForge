@@ -30,11 +30,8 @@ def reference():
 @app.route('/result', methods=['POST'])
 def my_form_post():
 
-    """ #Fingerprint
-    f_extended_connectivity = request.form['fec']
-    f_atom_environments = request.form['fae']
-    f_topological_torsion = request.form['ftts']
-    f_atom_pair = request.form['fap']
+    """
+
 
     #Output type
     smiles = request.form['smiles']
@@ -61,11 +58,32 @@ def my_form_post():
     avalon = request.form['avalon']
     atom_hashed_pair = request.form['atom_hashed_pair'] """
 
-    f_extended_connectivity = request.form['fec']
-    input='1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
+    fingerprint, f_output = "", ""
+    #Fingerprint
+    if(request.form['fec']):
+        fingerprint = 'ECFP4'
+
+    elif(request.form['fae']):
+        fingerprint = 'AEs'
+
+    elif(request.form['ftts']):
+        fingerprint = 'TT'
+
+    elif(request.form['fap']):
+        fingerprint = 'HashAP'
+
+    #smiles
+    if(request.form['smiles']):
+        f_output = 'smiles'
+
+    elif(request.form['selfies']):
+        f_output = 'selfies'
+
 
     #result = model_call(input)
-    result = "Argen is testing" + f_extended_connectivity
+
+
+    result = "Argen is testing " + fingerprint + f_output
 
     return(render_template('result.html', variable=result))
 
