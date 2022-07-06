@@ -91,4 +91,4 @@ def model_call(input, fp='Extended-Connectivity Fingerprint(ECFP)', model_type='
     #print(f"Inference finished! || Total inference time: {minutes}mins {seconds}secs")
     # output = reult sf.decoder(result) if model_type=='selfies' else result
 
-    return reult
+    return result
