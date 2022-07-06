@@ -81,7 +81,7 @@
         <h2>MolForge</h2>
         <p class="lead">Reconstruction of lossless molecular representations</p>
     </div>
-    <div class="row" style=" background-color: rgba(0,0,0,0.05); padding: 32px;">
+    <form class="row" action="/result" method="POST" target="_blank"  style=" background-color: rgba(0,0,0,0.05); padding: 32px;">
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Data Structure</h4>
             <form class="needs-validation" novalidate="">
@@ -89,32 +89,32 @@
                     <div class="col-md-6 mb-5">
                         <hr class="mb-3">
                         <label class="mx-3 p-1 mb-3 bg-info text-white">Input type: Fingerprint selection</label>
-                        <form class="pt-1">
+                        <div class="pt-1">
                             <input type="text" class="mx-3 form-control" name="fec" placeholder="Extended Connectivity Fingerpring" value="" required="">
-                        </form>
-                        <form class="pt-1">
+                        </div>
+                        <div class="pt-1">
                             <input type="text" class="mx-3 form-control" name="fae" placeholder="Atom Environments" value="" required="">
                             <div class="invalid-feedback"> </div>
-                        </form>
-                        <form class="pt-1">
+                        </div>
+                        <div class="pt-1">
                             <input type="text" class="mx-3 form-control" name="ftts" placeholder="Topological torsion - sparse" value="" required="">
                             <div class="invalid-feedback"> </div>
-                        </form>
-                        <form class="pt-1">
+                        </div>
+                        <div class="pt-1">
                             <input type="text" class="mx-3 form-control" name="fap" placeholder="Atom pair - hashed" value="" required="">
                             <div class="invalid-feedback"> </div>
-                        </form>
+                        </div>
                         <div class="pt-4">
                             <label class="mx-3 p-1 mb-3 bg-info text-white">Output type</label>
                         </div>
-                        <form class="mx-3 form-check form-check-inline">
+                        <div class="mx-3 form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" name="smiles">
                             <label class="form-check-label"> SMILES </label>
-                        </form>
-                        <form class="mx-3 form-check form-check-inline">
+                        </div>
+                        <div class="mx-3 form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" name="selfies">
                             <label class="form-check-label"> SELFIES </label>
-                        </form>
+                        </div>
 
                     </div>
                 </div>
@@ -124,49 +124,49 @@
                     <div class="mb-5">
                         <hr class="mb-3">
                         <label class="mx-3 p-1 mb-3 bg-info text-white">Input type: Tverskiy index parameters</label>
-                        <form class="pt-1" style="display: flex;">
+                        <div class="pt-1" style="display: flex;">
                             <input type="text" class="mx-3 form-control" name="alpha" style="width: 200px;" placeholder="Alpha" value="" required=""> α = β = 1.0
                             <div class="invalid-feedback"> </div>
-                        </form>
-                        <form class="pt-1" style="display: flex">
+                        </div>
+                        <div class="pt-1" style="display: flex">
                             <input type="text" class="mx-3 form-control" name="beta" style="width: 200px;" placeholder="Beta" value="" required=""> α = β = 0.5
                             <div class="invalid-feedback"> </div>
-                        </form>
+                        </div>
 
                         <hr class="mb-3">
                         <label class="mx-3 p-1 mb-3 bg-info text-white">Fingerprint class for molecular similarity</label>
 
                         <div class="custom-control custom-checkbox">
-                            <form class="form-check">
+                            <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="predefined_sub">
                                 <label class="form-check-label">
                                     Predefined substructures
                                 </label>
-                            </form>
-                            <form class="form-check">
+                            </div>
+                            <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="path_feature">
                                 <label class="form-check-label">
                                     Paths and feature class
                                 </label>
-                            </form>
-                            <form class="form-check">
+                            </div>
+                            <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="path_based">
                                 <label class="form-check-label">
                                     Path-based
                                 </label>
-                            </form>
-                            <form class="form-check">
+                            </div>
+                            <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="four_atom">
                                 <label class="form-check-label">
                                    4-atom-paths
                                 </label>
-                            </form>
-                            <form class="form-check">
+                            </div>
+                            <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="circular">
                                 <label class="form-check-label">
                                     Circular
                                 </label>
-                            </form>
+                            </div>
 
                         </div>
 
@@ -174,24 +174,24 @@
                             <label class="mx-3 p-1 mb-3 bg-info text-white">Fingerprint type for molecular similarity</label>
 
                             <div class="custom-control custom-checkbox">
-                                <form class="form-check">
+                                <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="atom_pair_hashed">
                                     <label class="form-check-label" >
                                         Atom pair-hashed
                                     </label>
-                                </form>
-                                <form class="form-check">
+                                </div>
+                                <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="rdk_with">
                                     <label class="form-check-label">
                                         RDKit hashed
                                     </label>
-                                </form>
-                                <form class="form-check">
+                                </div>
+                                <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="rdk_without">
                                     <label class="form-check-label">
                                         RDKit-with no branch
                                     </label>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -202,19 +202,19 @@
                 <div class="d-block my-3">
                     <div class="custom-control custom-radio">
 
-                        <form class="form-check form-check-inline">
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="macc">
                             <label class="form-check-label">MACC keys</label>
-                        </form>
-                        <form class="form-check form-check-inline">
+                        </div>
+                        <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="avalon">
                             <label class="form-check-label">Avalon</label>
-                        </form>
-                        <form action="/result" class="form-check form-check-inline" method="POST" target="_blank">
+                        </div>
+                        <div class="form-check form-check-inline" >
                             <input class="form-check-input" type="radio" name="atom_hashed_pair">
                             <label class="form-check-label">Atom pair - hashed</label>
                             <button class="btn btn-primary" type="submit" onclick="this.form.submit();">Submit</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
 
@@ -222,7 +222,7 @@
                 <button class="btn btn-primary" type="submit" onclick="this.form.submit();">Submit</button>
             </form>
         </div>
-    </div>
+    </form>
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">© 2022 MolForge</p>
         <ul class="list-inline">

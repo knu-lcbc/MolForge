@@ -61,14 +61,11 @@ def my_form_post():
     avalon = request.form['avalon']
     atom_hashed_pair = request.form['atom_hashed_pair'] """
 
+    f_extended_connectivity = request.form['fec']
     input='1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
 
-    model_type='smiles'
-    result = model_call(input, "TT", model_type)
-
-
-
-    #result = model_call(user_input)
+    #result = model_call(input)
+    result = "Argen is testing" + f_extended_connectivity
 
     return(render_template('result.html', variable=result))
 
