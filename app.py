@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def my_form():
-    return render_template('index.html')
+    return render_template('test.html')
 
-@app.route('/home')
+@app.route('/test')
 def home():
-    return render_template('index.html')
+    return render_template('test.html')
 
 @app.route('/predict')
 def predict():
@@ -86,6 +86,7 @@ def my_form_post():
     #  molecular similarity
     #----------------------------
 
+    #Please modify accordingly -> later
     if(request.form.get('predefined_sub')):
         class_mol_similarity = 'predefined_sub'
     elif(request.form.get('path_feature')):
@@ -97,7 +98,11 @@ def my_form_post():
     elif(request.form.get('circular')):
         class_mol_similarity = 'circular'
 
-    test_input = '1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
+    # Just for test. In case user chooses fingerprint without input. Default is below
+    if(len(input) == 0):
+        input = '1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
+        fingerprint = "Extended-Connectivity Fingerprint(ECFP)"
+
     result = model_call(input, fingerprint, model_type)
 
 
