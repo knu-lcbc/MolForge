@@ -101,9 +101,7 @@ For more results see the `Main_Results.ipynb` notebook.
 <hr style="background: transparent; border: 0.5px dashed;"/>
 
 ## Cite
-```
-
-```
+[![DOI](https://zenodo.org/badge/451459811.svg)](https://zenodo.org/badge/latestdoi/451459811)
 
 ### License
 
