@@ -13,18 +13,6 @@
             crossorigin="anonymous"
     ></script>
     <style>
-        .centered {
-            position: relative;
-            text-align: center;
-            display: grid;
-            place-items: center;
-            color: white;
-        }
-
-        .header {
-            color: black;
-        }
-
         p {
             color: #111;
             font-family: 'Helvetica Neue', sans-serif;
@@ -44,28 +32,14 @@
             text-align: center;
         }
 
-        #demo {
-            color: #111;
-            font-family: 'Helvetica Neue', sans-serif;
-            font-size: 22px;
-            line-height: 24px;
-            margin: 0 0 24px;
-            text-justify: inter-word;
-        }
-
-        .form-div {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
     </style>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-lg">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse justify-content-center navbar-brand" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="/test">Test</a>
             <a class="nav-item nav-link" href="/about">About</a>
@@ -77,17 +51,23 @@
 
 <div class="container">
     <div class="py-5 text-center">
-        <h1>Reference</h1>
+        <h1 class="mb-3 font-weight-bolder display-4 ">Reference</h1>
     </div>
-    <div class="row" style=" background-color: rgba(0,0,0,0.05); padding: 42px;">
+    <div class="row shadow p-5 mb-5 rounded mx-auto" style=" background-color: rgba(0,0,0,0.05); padding: 42px;">
         <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">To Do</h4>
+            <h4 class="mb-3">Reference a</h4>
 
         </div>
     </div>
-    <footer class="my-5 pt-5 text-muted text-center text-small">
+    <div class="row shadow p-5 mb-5 rounded mx-auto" style=" background-color: rgba(0,0,0,0.05); padding: 42px;">
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Reference b</h4>
+
+        </div>
+    </div>
+    <footer class="mt-5 pt-5 text-muted text-center text-small container-fluid border-top justify-content-between p-3">
         <p class="mb-1">© 2022 MolForge</p>
-        <ul class="list-inline">
+        <ul class="list-inline " >
             <li class="list-inline-item"><a href="#">Privacy</a></li>
             <li class="list-inline-item"><a href="#">Terms</a></li>
             <li class="list-inline-item"><a href="#">Support</a></li>

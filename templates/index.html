@@ -13,18 +13,6 @@
             crossorigin="anonymous"
     ></script>
     <style>
-        .centered {
-            position: relative;
-            text-align: center;
-            display: grid;
-            place-items: center;
-            color: white;
-        }
-
-        .header {
-            color: black;
-        }
-
         p {
             color: #111;
             font-family: 'Helvetica Neue', sans-serif;
@@ -44,21 +32,6 @@
             text-align: center;
         }
 
-        #demo {
-            color: #111;
-            font-family: 'Helvetica Neue', sans-serif;
-            font-size: 22px;
-            line-height: 24px;
-            margin: 0 0 24px;
-            text-justify: inter-word;
-        }
-
-        .form-div {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
         .form-check-input + input {
             pointer-events: none;
             background-color: rgba(0,0,0,0.05);
@@ -72,11 +45,11 @@
     </style>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-lg">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+    <div class="collapse navbar-brand navbar-collapse justify-content-center" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="/test">Test</a>
             <a class="nav-item nav-link" href="/about">About</a>
@@ -86,43 +59,43 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container ">
     <div class="py-5 text-center">
-        <h1 class="mb-3">MolForge</h1>
-        <h4>Reconstruction of lossless molecular representations</h4>
+        <h1 class="mb-3 font-weight-bolder display-4">MolForge</h1>
+        <h4 class="font-weight-light">Reconstruction of lossless molecular representations</h4>
     </div>
-    <form class="row" action="/result" method="POST" target="_blank" name="main"  style=" background-color: rgba(0,0,0,0.05); padding: 32px;">
+    <form class="row shadow p-3 mb-2 rounded mx-auto" action="/result" method="POST" target="_blank" name="main"  style=" background-color: rgba(0,0,0,0.05); padding: 32px;">
         <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Data Structure</h4>
+            <h4 class="mb-2 mt-4 font-weight-light">Data Structure</h4>
             <form class="needs-validation" novalidate="">
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <hr class="mb-3">
-                        <label class="mx-3 p-1 mb-3 bg-primary text-white">Input type: Fingerprint selection</label>
+                        <label class="mx-3 p-1 mb-3 bg-primary text-white font-weight-light">Input type: Fingerprint selection</label>
 
 
                         <div class="pt-1">
                             <div class="mx-3 form-check-inline input-group">
                                 <input class="form-check-input" type="radio" checked name="form-check" value="fec" aria-label="Checkbox for following text input" />
-                                <input type="text" class="form-control" name="fec" placeholder="Extended Connectivity Fingerpring" value="">
+                                <input type="text" class="form-control font-weight-light" name="fec" placeholder="Extended Connectivity Fingerpring" value="">
                             </div>
                         </div>
                         <div class="pt-1">
                             <div class="mx-3 form-check-inline input-group">
                                 <input class="form-check-input" type="radio" name="form-check" value="fae" aria-label="Checkbox for following text input" />
-                                <input type="text" class="form-control" name="fae" placeholder="Atom Environments" value="">
+                                <input type="text" class="form-control font-weight-light" name="fae" placeholder="Atom Environments" value="">
                             </div>
                         </div>
                         <div class="pt-1">
                             <div class="mx-3 form-check-inline input-group">
                                 <input class="form-check-input" type="radio" name="form-check" value="ftts" aria-label="Checkbox for following text input" />
-                                <input type="text" class="form-control" name="ftts" placeholder="Topological torsion - sparse" value="">
+                                <input type="text" class="form-control font-weight-light" name="ftts" placeholder="Topological torsion - sparse" value="">
                             </div>
                         </div>
                         <div class="pt-1">
                             <div class="mx-3 form-check-inline input-group">
                                 <input class="form-check-input" type="radio" name="form-check" value="fap" aria-label="Checkbox for following text input" />
-                                <input type="text" class="form-control" name="fap" placeholder="Atom pair - hashed" value="">
+                                <input type="text" class="form-control font-weight-light" name="fap" placeholder="Atom pair - hashed" value="">
                             </div>
 
                         </div>
@@ -132,18 +105,18 @@
                         <div class="mx-4 form-check form-check-inline">
                             <input class="form-check-input" type="radio" checked name="form-check-1">
                             <input class="text" type="hidden"  name="smiles">
-                            <label class="form-check-label" name="smiles"> SMILES </label>
+                            <label class="form-check-label font-weight-light" name="smiles"> SMILES </label>
                         </div>
                         <div class="mx-3 form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="form-check-1" value="selfies">
                             <input class="text" type="hidden"  name="selfies">
-                            <label class="form-check-label" name="selfies"> SELFIES </label>
+                            <label class="form-check-label font-weight-light" name="selfies"> SELFIES </label>
                         </div>
 
                     </div>
                 </div>
 
-                <h4 class="m-1">Assessment</h4>
+                <h4 class="m-1 font-weight-light">Assessment</h4>
                 <div class="row">
                     <div class="mb-5">
                         <hr class="mb-3">
@@ -151,7 +124,7 @@
                         <div class="pt-1">
                             <div class="mx-3 form-check-inline input-group">
                                 <input class="form-check-input" type="radio" name="form-check-2" checked value="ftts" aria-label="Checkbox for following text input" />
-                                <input type="text" class="mx-3 form-control" name="alpha" style="width: 200px;" placeholder="Alpha" value=""> α = β = 1.0
+                                <input type="text" class="mx-3 form-control font-weight-light" name="alpha" style="width: 200px;" placeholder="Alpha" value=""> α = β = 1.0
 
                             </div>
 
@@ -159,43 +132,43 @@
                         <div class="pt-1">
                             <div class="mx-3 form-check-inline input-group">
                                 <input class="form-check-input" type="radio" name="form-check-2" value="ftts" aria-label="Checkbox for following text input" />
-                                <input type="text" class="mx-3 form-control" name="beta" style="width: 200px;" placeholder="Beta" value=""> α = β = 0.5
+                                <input type="text" class="mx-3 form-control font-weight-light" name="beta" style="width: 200px;" placeholder="Beta" value=""> α = β = 0.5
 
                             </div>
 
                         </div>
 
                         <hr class="mb-3">
-                        <label class="mx-3 p-1 mb-3 bg-primary text-white">Fingerprint class for molecular similarity</label>
+                        <label class="mx-3 p-1 mb-3 bg-primary text-white font-weight-light">Fingerprint class for molecular similarity</label>
 
                         <div class="custom-control custom-checkbox">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" value="predefined_sub" name="form-check-3">
-                                <label class="form-check-label">
+                                <label class="form-check-label font-weight-light">
                                     Predefined substructures
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" value="path_feature" name="form-check-3">
-                                <label class="form-check-label">
+                                <label class="form-check-label font-weight-light">
                                     Paths and feature class
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" value="path_based" name="form-check-3">
-                                <label class="form-check-label">
+                                <label class="form-check-label font-weight-light">
                                     Path-based
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" value="four_atom"  name="form-check-3">
-                                <label class="form-check-label">
+                                <label class="form-check-label font-weight-light">
                                    4-atom-paths
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" value="circular"  name="form-check-3">
-                                <label class="form-check-label">
+                                <label class="form-check-label font-weight-light">
                                     Circular
                                 </label>
                             </div>
@@ -203,22 +176,22 @@
                         </div>
 
                         <div class="pt-4">
-                            <label class="mx-3 p-1 mb-3 bg-primary text-white">Fingerprint type for molecular similarity</label>
+                            <label class="mx-3 p-1 mb-3 bg-primary text-white font-weight-light">Fingerprint type for molecular similarity</label>
 
                             <div class="custom-control custom-checkbox">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" value="atom_pair_hashed" name="form-check-4">
-                                    <label class="form-check-label" >
+                                    <label class="form-check-label font-weight-light" >
                                         Atom pair-hashed
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" value="rdk_with" name="form-check-4">
-                                    <label class="form-check-label">
+                                    <label class="form-check-label font-weight-light">
                                         RDKit hashed
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check font-weight-light">
                                     <input class="form-check-input" type="radio" value="rdk_without" name="form-check-4">
                                     <label class="form-check-label">
                                         RDKit-with no branch
@@ -236,15 +209,15 @@
 
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="macc">
-                            <label class="form-check-label">MACC keys</label>
+                            <label class="form-check-label font-weight-light">MACC keys</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="avalon">
-                            <label class="form-check-label">Avalon</label>
+                            <label class="form-check-label font-weight-light">Avalon</label>
                         </div>
                         <div class="form-check form-check-inline" >
                             <input class="form-check-input" type="radio" name="atom_hashed_pair">
-                            <label class="form-check-label">Atom pair - hashed</label>
+                            <label class="form-check-label font-weight-light">Atom pair - hashed</label>
                         </div>
                     </div>
                 </div>
@@ -254,9 +227,9 @@
             </form>
         </div>
     </form>
-    <footer class="my-5 pt-5 text-muted text-center text-small">
+    <footer class="mt-5 pt-5 text-muted text-center text-small container-fluid border-top justify-content-between p-3">
         <p class="mb-1">© 2022 MolForge</p>
-        <ul class="list-inline">
+        <ul class="list-inline " >
             <li class="list-inline-item"><a href="#">Privacy</a></li>
             <li class="list-inline-item"><a href="#">Terms</a></li>
             <li class="list-inline-item"><a href="#">Support</a></li>
