@@ -41,33 +41,37 @@ def my_form_post():
     avalon = request.form['avalon']
     atom_hashed_pair = request.form['atom_hashed_pair'] """
 
-    fingerprint, f_output, index, class_mol_similarity = '', '', '', ''
+    fingerprint, model_type, index, input, class_mol_similarity = '', 'smiles', 'alpha', '',''
 
     #----------------------------
     #  Fingerprint
     #----------------------------
 
     if(request.form['fec']):
-        fingerprint = 'Extended-Connectivity Fingerprint(ECFP)'
+        fingerprint = "Extended-Connectivity Fingerprint(ECFP)"
+        input = request.form['fec']
 
     elif(request.form['fae']):
-        fingerprint = 'Atom environments'
+        fingerprint = "Atom environments"
+        input = request.form['fae']
 
-    elif(request.form['Topological torsion-sparse']):
-        fingerprint = 'TT'
+    elif(request.form['ftts']):
+        fingerprint = "Topological torsion-sparse"
+        input = request.form['Topological torsion-sparse']
 
     elif(request.form['fap']):
-        fingerprint = 'Atom pair-hashed'
+        fingerprint = "Atom pair-hashed"
+        input = request.form['fap']
 
     #----------------------------
     #  smiles
     #----------------------------
 
     if(request.form['smiles']):
-        f_output = 'smiles'
+        model_type = 'smiles'
 
     elif(request.form['selfies']):
-        f_output = 'selfies'
+        model_type = 'selfies'
 
     #----------------------------
     #  tverskiy index parameter
@@ -93,11 +97,9 @@ def my_form_post():
     elif(request.form.get('circular')):
         class_mol_similarity = 'circular'
 
-    input = '1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
-    result = model_call(input,fingerprint, f_output)
+    test_input = '1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
+    result = model_call(input, fingerprint, model_type)
 
-
-    #result = "Selected values are: " + fingerprint + ' '+ f_output + '  '+  index + '  '+  class_mol_similarity
 
     return(render_template('result.html', variable=result))
 
