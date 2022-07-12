@@ -30,17 +30,6 @@ def reference():
 @app.route('/result', methods=['POST'])
 def my_form_post():
 
-    """
-    #Fingerprint type for molecular similarity
-    atom_pair_hashed = request.form['predefined_sub']
-    atom_pair_hashed = request.form['rdk_with']
-    atom_pair_hashed = request.form['rdk_without']
-
-    #others
-    macc = request.form['macc']
-    avalon = request.form['avalon']
-    atom_hashed_pair = request.form['atom_hashed_pair'] """
-
     fingerprint, model_type, index, input, class_mol_similarity = '', 'smiles', 'alpha', '',''
 
     #----------------------------
@@ -98,7 +87,7 @@ def my_form_post():
     elif(request.form.get('circular')):
         class_mol_similarity = 'circular'
 
-    # Just for test. In case user chooses fingerprint without input. Default is below
+    # Default input, please update later
     if(len(input) == 0):
         input = '1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
         fingerprint = "Extended-Connectivity Fingerprint(ECFP)"
