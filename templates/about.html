@@ -13,24 +13,19 @@
             crossorigin="anonymous"
     ></script>
     <style>
-        p {
-            color: #111;
-            font-family: 'Helvetica Neue', sans-serif;
-            font-size: 14px;
-            line-height: 24px;
-            margin: 0 0 24px;
-            text-justify: inter-word;
+        .hero-unit {
+            padding: 60px;
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-weight: 200;
+            line-height: 30px;
+            color: inherit;
+            background-color: #eee;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
         }
 
-        h1 {
-            color: #111;
-            font-family: 'Helvetica Neue', sans-serif;
-            font-size: 36px;
-            font-weight: bold;
-            letter-spacing: -1px;
-            line-height: 1;
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -50,23 +45,45 @@
 
 <div class="container">
     <div class="py-5 text-center">
-        <h1 class="mb-3 font-weight-bolder display-4">About MolForge</h1>
+        <h4 class="mb-3 font-weight-bolder display-4">About MolForge</h4>
     </div>
-    <div class="row shadow p-3 mb-2 bg-body rounded mx-auto" style=" background-color: rgba(0,0,0,0.03); padding: 42px;">
-        <div class="text-center font-weight-light ">
-            <h3 class="mb-3 font-weight-bolder">Reconstruction of lossless molecular representations</h3>
-            <p class="font-weight-normal">SMILES is the most dominant molecular representation used in AI-based chemical applications,
-                but it has innate limitations associated with its internal structure.
-                Here, we exploit the idea that a set of structural fingerprints can be used as efficient alternatives to uni
-                    que molecular representations. For this purpose, we trained neural-machine-translation based models that translate
-                    a set of various structural fingerprints to conventional text-based molecular representations, i.e., SMILES and SELFIES.
-            The assessment of their conversion efficiency showed that our models successfully reconstructed molecules and achieved a high
-            level of accuracy. Therefore, our approach brings structural fingerprints into play as strong representational tools in
-            chemical natural language processing applications by restoring the connectivity information that is lost during
-            fingerprint transformation. This comprehensive study addressed the major limitation of structural fingerprints,
-            which precludes their implementation in NLP models. Our findings would facilitate the development of text or
-            fingerprint-based chemoinformatic models for generative and translational tasks.</p>
+    <div class=" bg-body rounded">
+        <div class="hero-unit">
 
+            <h3>Scientific Background & Purpose</h3>
+            <h2></h2>
+            <p> SMILES is the most dominant molecular representation used in AI-based chemical applications, but it has innate limitations associated with its internal structure.
+                Here, the primary idea is to exploit the resolution and robustness provided by unique molecular representations, i.e., SMILES and SELFIES,
+                reconstructed from a set of structural fingerprints. <p>  Our approach brings structural fingerprints into play as strong representational tools in chemical natural language processing
+                applications by restoring the connectivity information, which is lost during fingerprint transformation, with high level of accuracy. </p>
+                The construction of molecular fingerprints is indeed a lossy procedure so that the use of fingerprints leads to the generation of standalone
+                interpretable tokens. Since attention is a permutation-invariant operation, fingerprints fit well into attention mechanism. Attention-based model, such as
+                Transformer, can handle the unconnected features of fingerprints as shown in previous reports
+                <a href="#">[1,2]</a>. For this purpose, we employed a translation-based system, namely the
+                Transformer architecture, to accurately decode fingerprints back into lossless molecular representations.
+            </p>
+        </div>
+        <div class="hero-unit"><h3>Results</h3>
+            <p>We illustrated our approach using 13 structural fingerprint examples, classified into five main categories,
+                and showed that certain fingerprints can be used directly in an NLP setting as alternatives to SMILES or SELFIES.
+                <p>The performance results revealed that structural fingerprints such as extended-connectivity, topological torsion,
+                atom-pairs, and atomic environments can be used not only as the inputs, but also as the outputs of chemical NLP applications,
+                provided that the so-called irreversible molecule-to-fingerprint conversion is feasible.</p>
+            </p>
+        </div>
+        <div class="hero-unit">
+            <h3>Conclusions</h3>
+            <p>To address the major limitation of structural fingerprints that preclude their implementation in NLP models, we assessed the conversion
+                efficiency of fingerprints back to the molecules. We demonstrated that the reconstruction of molecules is a practical approach that achieves a
+                very high accuracy for chemical applications. We believe our findings would facilitate the development of text or fingerprint-based chemoinformatic models for
+                generative and translational tasks.
+            </p>
+            <li>
+                <a href="">1. U. V. Ucak, T. Kang, J. Ko, J. Lee, J. Cheminformatics 2021, 13, 1 1.</a>
+            </li>
+            <li>
+                <a href=""> 2. U. V. Ucak, I. Ashyrmamatov, J. Ko, J. Lee, Nat. Commun. 2022, 13, 1 1186.</a>
+            </li>
         </div>
     </div>
     <footer class="mt-5 pt-5 text-muted text-center text-small container-fluid border-top justify-content-between p-3">
