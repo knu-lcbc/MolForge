@@ -9,7 +9,7 @@ __pycache__/
 *.png
 
 # Big files
-saved_models/
+saved_models/*
 
 # notebook checkpoints
 *.ipynb_checkpoints/

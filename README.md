@@ -24,17 +24,16 @@ The source code is tested on Linux operating systems. After cloning the reposito
    
 #### Prediction & Demo:
 
-First, [checkpoints files](https://drive.google.com/uc?id=1qD8JicIwjyxKKLYahKtbBzKhnUq0JBKx) should be downloaded and extracted.
-  
-Run below commands to conduct an inference with the trained model.
+First, checkpoint files ([top-performing](https://drive.google.com/uc?id=1qD8JicIwjyxKKLYahKtbBzKhnUq0JBKx) or [all the oher models](https://drive.google.com/file/d/1jCtbc9lMacCyiZ3iZFEtFgOfOQYtWEuD/view?usp=sharing)) should be downloaded and extracted. The checkpoints files should be placed in `./saved_models/` directory. Then,run below commands to conduct an inference with the trained model.
 
    ```shell
-   predict --fp --model_type --input
+   python predict.py --fp  --model_type --input --checkpoint
    ```
-   - `--fp`: The name of fingerprint.
-   - `--model_type`: Molecular representation e.g. 'smiles' or 'selfies'
-   - `--input`: An input for prediction
-   - `--checkpoint`: Checkpoint file for the given model. If `None`, it uses the downloaded checkpoints.  
+   where: 
+   - `--fp` : The name of fingerprint.
+   - `--model_type` : Molecular representation e.g. 'smiles' or 'selfies'
+   - `--input` : Bit number of the fingerprint (`--fp`).
+   - `--checkpoint` : Checkpoint file for the given model. If `None`, it uses the downloaded checkpoints in the `./saved_models/`.  
    - `--decode`: Decoding algorithm (either `'greedy'` or `'beam'`), (by default: `greedy`)
  
 
