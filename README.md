@@ -39,7 +39,7 @@ First, checkpoint files ([top-performing](https://drive.google.com/uc?id=1zl6HBd
 
 Example prediction;
 ```shell
-predict --fp='ECFP4' --model_type='smiles' --input='1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
+python predict.py --fp='ECFP4' --model_type='smiles' --input='1 80 94 114 237 241 255 294 392 411 425 695 743 747 786 875 1057 1171 1238 1365 1380 1452 1544 1750 1773 1853 1873 1970'
 ```
 and its sample output;
 
