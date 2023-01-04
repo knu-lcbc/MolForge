@@ -24,7 +24,7 @@ The source code is tested on Linux operating systems. After cloning the reposito
    
 #### Prediction & Demo:
 
-First, checkpoint files ([top-performing](https://drive.google.com/file/d/1zl6HBdwYsnA4JcnOi1o6OmcrRDB5iySK) or [all the oher models](https://drive.google.com/file/d/1jCtbc9lMacCyiZ3iZFEtFgOfOQYtWEuD)) should be downloaded and extracted. The checkpoints files should be placed in `./saved_models/` directory. Then,run below commands to conduct an inference with the trained model.
+First, checkpoint files ([top-performing](https://drive.google.com/uc?id=1zl6HBdwYsnA4JcnOi1o6OmcrRDB5iySK) or [all the oher models](https://drive.google.com/uc?id=1jCtbc9lMacCyiZ3iZFEtFgOfOQYtWEuD)) should be downloaded and extracted. The checkpoints files should be placed in `./saved_models/` directory. Then,run below commands to conduct an inference with the trained model.
 
    ```shell
    python predict.py --fp  --model_type --input --checkpoint
