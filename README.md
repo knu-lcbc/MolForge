@@ -1,13 +1,8 @@
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
-
-## Reconstruction of lossless molecular representations.
-SMILES is the most dominant molecular representation used in AI-based chemical applications, but it has innate limitations associated with its internal structure.
-Here, we exploit the idea that a set of structural fingerprints can be used as efficient alternatives to unique molecular representations.
-For this purpose, we trained neural-machine-translation based models that translate a set of various structural fingerprints to conventional text-based molecular representations, i.e., SMILES and SELFIES. 
-The assessment of their conversion efficiency showed that our models successfully reconstructed molecules and achieved a high level of accuracy. 
-Therefore, our approach brings structural fingerprints into play as strong representational tools in chemical natural language processing applications by restoring the connectivity information that is lost during fingerprint transformation.
-This comprehensive study addressed the major limitation of structural fingerprints, which precludes their implementation in NLP models.
-Our findings would facilitate the development of text or fingerprint-based chemoinformatic models for generative and translational tasks.
+[![DOI](https://zenodo.org/badge/451459811.svg)](https://zenodo.org/badge/latestdoi/451459811)
+[![J. Cheminformatics DOI](https://img.shields.io/badge/J._Cheminformatics-10.1186%2Fs13321--023--00693--0-blue)](https://doi.org/10.1186/s13321-023-00693-0)
+## Reconstruction of lossless molecular representations from fingerprints
+The simplified molecular-input line-entry system (SMILES) is the most prevalent molecular representation used in AI-based chemical applications. However, there are innate limitations associated with the internal structure of SMILES representations. In this context, this study exploits the resolution and robustness of unique molecular representations, i.e., SMILES and SELFIES (SELF-referencIng Embedded strings), reconstructed from a set of structural fingerprints, which are proposed and used herein as vital representational tools for chemical and natural language processing (NLP) applications. This is achieved by restoring the connectivity information lost during fingerprint transformation with high accuracy. Notably, the results reveal that seemingly irreversible molecule-to-fingerprint conversion is feasible. More specifically, four structural fingerprints, extended connectivity, topological torsion, atom pairs, and atomic environments can be used as inputs and outputs of chemical NLP applications. Therefore, this comprehensive study addresses the major limitation of structural fingerprints that precludes their use in NLP models. Our findings will facilitate the development of text- or fingerprint-based chemoinformatic models for generative and translational tasks.
 
 <hr style="background: transparent; border: 0.2px dashed;"/>
 
@@ -100,8 +95,21 @@ For more results see the `Main_Results.ipynb` notebook.
 <hr style="background: transparent; border: 0.5px dashed;"/>
 
 ## Cite
-[![DOI](https://zenodo.org/badge/451459811.svg)](https://zenodo.org/badge/latestdoi/451459811)
-
+```
+@article{10.1186/s13321-023-00693-0, 
+year = {2023}, 
+title = {{Reconstruction of lossless molecular representations from fingerprints}}, 
+author = {Ucak, Umit V. and Ashyrmamatov, Islambek and Lee, Juyong}, 
+journal = {Journal of Cheminformatics}, 
+issn = {1758-2946}, 
+doi = {10.1186/s13321-023-00693-0}, 
+pmid = {36823647}, 
+pmcid = {PMC9948316}, 
+pages = {26}, 
+number = {1}, 
+volume = {15}
+}
+```
 ### License
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
